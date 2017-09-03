@@ -46,6 +46,8 @@ subl(Ts&&... ts, T&& t) {
 }
 */
 
+/* Retrieve number of arguments with sizeof... */
+
 template <typename... Ts>
 constexpr auto
 countTypes(Ts... ts) {
