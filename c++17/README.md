@@ -24,7 +24,10 @@ This extends the capabilities already established by C++11's parameter packing. 
 (init op ... op pack)
 
 ```
-More details can be found on [cppreference](http://en.cppreference.com/w/cpp/language/fold). Example code [here](examples/foldexpr.cpp).
+Check out [cppreference](http://en.cppreference.com/w/cpp/language/fold) for more details.
+
+#### Examples
+[examples/foldexpr.cpp](examples/foldexpr.cpp) contains examples on fold expression usage.
 
 ### Structured bindings
 Syntactic sugar for unpacking tuples and other structures. Consider the following:
@@ -50,5 +53,9 @@ Not only is this verbose, but this also forces default construction of non-POD t
 auto [identifier-list] = expression;
 ```
 
-The full details on this feature can be found on [cppreference](http://en.cppreference.com/w/cpp/language/structured_binding). Example code [here](examples/strucbind.cpp).
+Check out [cppreference](http://en.cppreference.com/w/cpp/language/structured_binding) for more details.
+
+#### Examples
+[examples/strucbind.cpp](examples/strucbind.cpp) contains examples on structured bindings usage.
+
 
