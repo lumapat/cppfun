@@ -9,5 +9,10 @@ The current standard is C++14. Refer to the C++14 directory for the latest draft
 
 * `auto` keyword
 * Lambda expressions
+* [Parameter packs and variadic templates](#parameter-packs-and-variadic-templates)
 
+### Parameter packs and variadic templates
+[Parameter packs](http://en.cppreference.com/w/cpp/language/parameter_pack)
+are used in C++ to pack and expand a varying number of (possibly) different types in instances like class inheritance, lambda captures, or template parameters. 
 
+Example code [here](examples/parampack.cpp).
