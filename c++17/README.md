@@ -37,15 +37,15 @@ Check out [cppreference](http://en.cppreference.com/w/cpp/language/fold) for mor
 /* Mutex RAII in an if-statement */
 std::mutex mx;
 
-/* Some code */
-
 {
     std::lock_guard<std::mutex> lk(mx);
     if(var.something()) var.somethingElse();
 }
 
+...
+
 /* Members required from newly instantiated objects */
-Object o(args);
+Object o{args};
 
 switch(o.someProperty()) {
     ...
@@ -55,12 +55,12 @@ switch(o.someProperty()) {
 #### Syntax
 ```cpp
 /* if-initializer */
-if(initializer-expr; bool-expr) {
+if(initializer-expr; boolean-expr) {
     ...
 }
 
 /* switch-initializer */
-switch(initializer-expr; value) {
+switch(initializer-expr; value-expr) {
     ...
 }
 ```
@@ -81,7 +81,7 @@ if(std::lock_guard<std::mutex> lk(mx); var.something()) {
 ...
 
 /* switch-initializer */
-switch(Object o{args}; o.getProperty() {
+switch(Object o{args}; o.getProperty()) {
     ...
 }
 ```
