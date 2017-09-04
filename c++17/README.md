@@ -8,6 +8,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 (NOT COMPLETED. Once this is removed, the list is complete)
 
 * [Fold expressions](#fold-expressions)
+* [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
 
 ### Fold expressions
@@ -28,6 +29,63 @@ Check out [cppreference](http://en.cppreference.com/w/cpp/language/fold) for mor
 
 #### Examples
 [examples/foldexpr.cpp](examples/foldexpr.cpp) contains examples on fold expression usage.
+
+### Selection statements with initializer
+`if` statements and `switch` statements can now contain initializer expressions before boolean expressions. Consider the following as scenarios improved upon by these features:
+
+```cpp
+/* Mutex RAII in an if-statement */
+std::mutex mx;
+
+/* Some code */
+
+{
+    std::lock_guard<std::mutex> lk(mx);
+    if(var.something()) var.somethingElse();
+}
+
+/* Members required from newly instantiated objects */
+Object o(args);
+
+switch(o.someProperty()) {
+    ...
+}
+```
+
+#### Syntax
+```cpp
+/* if-initializer */
+if(initializer-expr; bool-expr) {
+    ...
+}
+
+/* switch-initializer */
+switch(initializer-expr; value) {
+    ...
+}
+```
+
+Check out cppreference for more details on [if-initializers](http://en.cppreference.com/w/cpp/language/if#If_Statements_with_Initializer) and [switch-initializers](http://en.cppreference.com/w/cpp/language/switch).
+
+#### Examples
+```cpp
+std::mutex mx;
+
+/* if-initializer */
+if(std::lock_guard<std::mutex> lk(mx); var.something()) {
+    ...
+    var.somethingElse();
+    ...
+}
+
+...
+
+/* switch-initializer */
+switch(Object o{args}; o.getProperty() {
+    ...
+}
+```
+
 
 ### Structured bindings
 Syntactic sugar for unpacking tuples and other structures. Consider the following:
