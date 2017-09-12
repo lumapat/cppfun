@@ -7,9 +7,34 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 ## Features 
 (NOT COMPLETED. Once this is removed, the list is complete)
 
+* [`constexpr` constructs](#constexpr-constructs)
 * [Fold expressions](#fold-expressions)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
+
+### `constexpr` constructs
+[`constexpr`](http://en.cppreference.com/w/cpp/language/constexpr) is a specifier introduced in C++11 that indicates that an expression, function (including constructors), or variable be evaluated at compile time. In C++17, `constexpr` lambda expressions and `if` statements were introduced.
+
+#### Syntax
+```cpp
+/* constexpr lambda expression (one variant) */
+auto add = [](auto i, auto j) constexpr { return i + j; };
+
+/* constexpr if */
+auto smth = someValue();
+
+if constexpr(std::is_integral<decltype(smth)>::value) {
+    // do something with that integral value
+}
+else {
+    // do something with that non-integral value
+}
+```
+
+Check out cppreference on [lambdas](http://en.cppreference.com/w/cpp/language/lambda) and [`if` statements](http://en.cppreference.com/w/cpp/language/if) for more details.
+
+#### Examples
+[examples/constexpr.cpp](examples/constexpr.cpp) contains examples on these `constexpr` constructs.
 
 ### Fold expressions
 This extends the capabilities already established by C++11's parameter packing. Fold expressions are seen (and are integral to) languages like Haskell, and it has come to C++! 
@@ -115,5 +140,3 @@ Check out [cppreference](http://en.cppreference.com/w/cpp/language/structured_bi
 
 #### Examples
 [examples/strucbind.cpp](examples/strucbind.cpp) contains examples on structured bindings usage.
-
-
