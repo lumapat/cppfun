@@ -13,7 +13,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [Stuctured bindings](#structured-bindings)
 
 ### `constexpr` constructs
-[`constexpr`](http://en.cppreference.com/w/cpp/language/constexpr) is a specifier introduced in C++11 that indicates that an expression, function (including constructors), or variable be evaluated at compile time. In C++17, `constexpr` lambda expressions and `if` statements were introduced.
+[`constexpr`](http://en.cppreference.com/w/cpp/language/constexpr) is a specifier introduced in C++11 that indicates that an expression, function (including constructors), or variable be evaluated at compile time. Recently, C++17 introduced `constexpr` lambda expressions and `if` statements.
 
 #### Syntax
 ```cpp
