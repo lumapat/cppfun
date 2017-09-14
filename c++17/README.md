@@ -18,7 +18,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 ### Class template argument deduction
 Like functions, template arguments of a templated class can now be deduced from a constructor! In addition, C++17 provides user-defined deduction guides for deducing class template arguments. Look [here](http://en.cppreference.com/w/cpp/language/class_template_argument_deduction) for more information.
 
-### Syntax (for user-defined deduction guides)
+#### Syntax (for user-defined deduction guides)
 ```cpp
 template <typename T> explicit Class(T) -> A<T>;
 template <typename Iter> Class(Iter, Iter) -> A<typename std::iterator_traits<Iter>::value_type>;
@@ -39,6 +39,7 @@ template <typename T> Object(std::vector<T>) -> Object<T>;
 
 // Before C++17, we would need to specify the type
 auto o0 = Object<int>{};
+Object<double> odbl{1.55};
 
 // Now we can do these!
 auto o1 = Object{}; // o1 is of type Object<int>
