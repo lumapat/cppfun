@@ -24,12 +24,15 @@ template <typename T> explicit Class(T) -> A<T>;
 template <typename Iter> Class(Iter, Iter) -> A<typename std::iterator_traits<Iter>::value_type>;
 ```
 
+See above cppreference page for more details.
+
 #### Examples
 ```cpp
 template <typename T = int>
 class Object {
-    Object() = default;
-    Object(T val) { ... }
+    public:
+        Object() = default;
+        Object(T) { ... }
 };
 
 // User-defined deduction guide
@@ -39,13 +42,15 @@ template <typename T> Object(std::vector<T>) -> Object<T>;
 
 // Before C++17, we would need to specify the type
 auto o0 = Object<int>{};
-Object<double> odbl{1.55};
+auto o1 = Object<double>{1.55};
 
 // Now we can do these!
 auto o1 = Object{}; // o1 is of type Object<int>
-Object o2{100L};    // o2 is of type Object<long>
-Object o3{std::vector<std::string>{}}; // o3 is of type Object<std::string> with the deduction guide
+auto o2 = Object{100L};    // o2 is of type Object<long>
+auto o3 = Object{std::vector<std::string>{}}; // o3 is of type Object<std::string> with the deduction guide
 ```
+
+[examples/classdeduc.cpp](examples/classdeduc.cpp) contains more examples on class template argument deduction.
 
 ### `constexpr` constructs
 [`constexpr`](http://en.cppreference.com/w/cpp/language/constexpr) is a specifier introduced in C++11 that indicates that an expression, function (including constructors), or variable be evaluated at compile time. Recently, C++17 introduced `constexpr` lambda expressions and `if` statements.
