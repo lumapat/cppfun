@@ -11,6 +11,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [`constexpr` constructs](#constexpr-constructs)
 * [Fold expressions](#fold-expressions)
 * [Lambda by copy capture of `this`](#lambda-by-copy-capture-of-this)
+* [New atttributes in C++17](#new-attributes-in-c++17)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
 * [`template <auto>`](#template-<auto>)
@@ -136,6 +137,13 @@ void foo() {
 ```
 
 Check out cppreference on [lambdas](http://en.cppreference.com/w/cpp/language/lambda) for more details.
+
+### New attributes in C++17
+C++17 introduces the attributes `[[fallthrough]]`, `[[maybe_unused]]`, and `[[nodiscard]]`. Details on what each of them indicate can be found on cppreference's [attribute page](http://en.cppreference.com/w/cpp/language/attributes).
+
+#### Examples
+
+[examples/attrib.cpp](examples/attrib.cpp) contains examples on usage of these new attributes.
 
 ### Selection statements with initializer
 `if` statements and `switch` statements can now contain initializer expressions before boolean expressions. Consider the following as scenarios improved upon by these features:
