@@ -14,7 +14,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [New atttributes in C++17](#new-attributes-in-c++17)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
-* [`template <auto>`](#template-<auto>)
+* [`template <auto>`](#template-auto)
 
 ## Library Features
 
