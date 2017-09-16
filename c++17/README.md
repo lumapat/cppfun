@@ -13,6 +13,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [Lambda by copy capture of `this`](#lambda-by-copy-capture-of-this)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
+* [`template <auto>`](#template-<auto>)
 
 ## Library Features
 
@@ -221,3 +222,16 @@ Check out [cppreference](http://en.cppreference.com/w/cpp/language/structured_bi
 
 #### Examples
 [examples/strucbind.cpp](examples/strucbind.cpp) contains examples on structured bindings usage.
+
+### `template <auto>`
+For non-type template parameters, you can now use `auto` to deduce the type.
+
+#### Example
+```cpp
+template <auto N, auto Item>
+auto generate_vector() {
+    return std::vector(N, Item); // Generate an N-length vector initialized with Item
+}
+```
+
+Check out [cppreference](http://en.cppreference.com/w/cpp/language/auto) for more details.
