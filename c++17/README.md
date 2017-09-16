@@ -15,6 +15,8 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 
 ## Library Features
 
+## Language Features in Detail
+
 ### Class template argument deduction
 Like functions, template arguments of a templated class can now be deduced from a constructor! In addition, C++17 provides user-defined deduction guides for deducing class template arguments. Look [here](http://en.cppreference.com/w/cpp/language/class_template_argument_deduction) for more information.
 
