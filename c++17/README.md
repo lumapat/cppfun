@@ -13,7 +13,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [Lambda by copy capture of `this`](#lambda-by-copy-capture-of-this)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
-* [`template <auto>`](#template-<auto>)
+* [`template <auto>`](#template-auto)
 
 ## Library Features
 
