@@ -10,6 +10,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [Class template argument deduction](#class-template-argument-deduction)
 * [`constexpr` constructs](#constexpr-constructs)
 * [Fold expressions](#fold-expressions)
+* [Lambda by copy capture of `this`](#lambda-by-copy-capture-of-this)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
 
@@ -96,6 +97,44 @@ Check out [cppreference](http://en.cppreference.com/w/cpp/language/fold) for mor
 
 #### Examples
 [examples/foldexpr.cpp](examples/foldexpr.cpp) contains examples on fold expression usage.
+
+### Lambda by copy capture of `this`
+Previously, only `this` could be captured by reference as in the following:
+
+```cpp
+class Object {
+    ...
+
+    // Class method
+    void foo() {
+
+        // Capture by reference
+        auto lambda = [this](auto arg) {
+            ...
+        };
+    }
+
+};
+```
+
+C++17 introduces `*this` as the syntax for by-copy capture.
+
+#### Syntax
+
+```cpp
+
+// Some class method
+void foo() {
+
+    // Capture by value
+    auto lambda = [*this](auto arg) {
+
+    };
+}
+
+```
+
+Check out cppreference on [lambdas](http://en.cppreference.com/w/cpp/language/lambda) for more details.
 
 ### Selection statements with initializer
 `if` statements and `switch` statements can now contain initializer expressions before boolean expressions. Consider the following as scenarios improved upon by these features:
