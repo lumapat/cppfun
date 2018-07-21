@@ -11,7 +11,7 @@ The latest draft for C++17 can be found [here](https://github.com/cplusplus/draf
 * [`constexpr` constructs](#constexpr-constructs)
 * [Fold expressions](#fold-expressions)
 * [Lambda by copy capture of `this`](#lambda-by-copy-capture-of-this)
-* [New atttributes in C++17](#new-attributes-in-c++17)
+* [New attributes in C++17](#new-attributes-in-c++17)
 * [Selection statements with initializer](#selection-statements-with-initializer)
 * [Stuctured bindings](#structured-bindings)
 * [`template <auto>`](#template-auto)
